@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: lightcyan;  
+    background-color: beige;  
 }
 
 header {
@@ -70,10 +70,10 @@ main {
 }
 
 .article {
-    width: 350px;
-    height: 200px;
+    width: 650px;
+    height: 400px;
     box-sizing: border-box;
-    background-color: white;
+    background-color: lightcyan;
     color:midnightblue;
     padding: 20px;
     margin: 20px 0;
@@ -91,26 +91,101 @@ a {
 .customer {
     float:right;
     border: 15px solid midnightblue;
+    background-color: lightcyan;
     padding: 10px;
     margin: 50px;
 }
 .puppy {
+    width: 500px;
+}
+
+.activity {
+    position: relative;
     float: right;
+    border: 15px solid midnightblue;
+    background-color: lightcyan;
+    padding: 8px;
+    margin-left: 210px;
+    margin-right: 55px;
+}
+.actives {
     width: 500px;
 }
 
 fieldset {
     border: 10px solid midnightblue;
+    background-color: lightcyan;
+    float: left;
+    width: 800px;
+    height: 600px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+}
+.bookinginfo {
+    width: 500px;
+    height: 400px;
+    box-sizing: content-box;
+    float: right;
+    background-color: lightcyan;
+    color:midnightblue;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.doglist {
+    width: 1000px;
+    height: 600px;
+    box-sizing: content-box;
+    background-color: lightcyan;
+    color:midnightblue;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.addone {
     background-color: white;
+    color: black;
+    border: 2px solid white;
+    float: right;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 420px;
 }
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
+
+.addone:hover {
+    background-color: midnightblue;
     color: white;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
 }
 
+.dog1 {
+    width: 150px;
+    height: 200px;
+}
 
+.dog2 {
+    width: 150px;
+    height: 200px;
+}
+
+.dog3 {
+    width: 150px;
+    height: 200px;
+}
+.firstdog {
+    float: left;
+    margin-left: 20px;
+}
+
+.seconddog {
+    margin-left: 80px;
+    float: left;
+}
+
+.thirddog {
+    margin-left: 80px;
+    float: left;
+}
