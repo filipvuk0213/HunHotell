@@ -5,20 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Dog</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function submitForm() {
+            // Get form values
+            var dogName = encodeURIComponent(document.getElementById("dname").value);
+            var breed = encodeURIComponent(document.getElementById("breed").value);
+            var ownerName = encodeURIComponent(document.getElementById("oname").value);
+            var contactEmail = encodeURIComponent(document.getElementById("omail").value);
+            var contactPhone = encodeURIComponent(document.getElementById("otel").value);
+            var stayLength = encodeURIComponent(document.getElementById("days").value);
+
+            var randomCode = Math.floor(1000 + Math.random() * 9000); // Generates number between 1000 and 9999
+
+            // Construct query string
+            var queryString = `?name=${dogName}&breed=${breed}&owner=${ownerName}&email=${contactEmail}&phone=${contactPhone}&stay=${stayLength}&code=${randomCode}`;
+
+            // Redirect to mydogs.html with query string
+            window.location.href = 'mydogs.html' + queryString;
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>HELSINGBORGS HUNDHOTELL</h1>
         <img class="blogo" src="images/dog_brains_2500.png.webp" alt="blogo">
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="mydogs.html">MY DOGS</a></li>
-                <li><a href="#">CONTACT</a></li>
-                <li><a href="booking.html">BOOKING</a></li>
-            </ul>
-        </nav>
     </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="mydogs.html">MY DOGS</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="booking.html">BOOKING</a></li>
+        </ul>
+    </nav>
         <main>
             <section class="customer">
             <img class="puppy" src="images/KOA_Nassau_2697x1517.jpg" alt="Cute dog">
@@ -37,47 +56,48 @@
     <h2>Available Activites</h2>
 </section>
 
-        <a href="services.html">
         <section class="article">
             <h2>Our Services</h2>
             <p>We offer a range of services including grooming, training, and play sessions. Our experienced staff is dedicated to providing the best care possible for your pets.</p>
         </section>
-    </a>
 
-        <a href="about_us.html">
         <section class="article">
             <h2>Why Choose Us?</h2>
             <p>At the Happy Dog, we understand that your dog is a cherished member of your family. That's why we go above and beyond to create a safe, comfortable, and fun environment for your furry friend.</p>
         </section>
-    </a>
 
-    <form>
+    <form onsubmit="submitForm(); return false;">
         <fieldset>
         <h2>Quick Application</h2>
         <label for="dname">Dogs Name</label><br>
         <input type="text" id="dname" name="dname"><br>
+
         <label for="breed">What breed is your dog? (Neccesary for bed size etc..)</label><br>
         <input type="text" id="breed" name="breed"><br>
+
         <label for="oname">Owners Name</label><br>
         <input type="text" id="oname" name="oname"><br>
+
         <label for="omail">Contact Mail</label><br>
         <input type="email" id="omail" name="omail"><br>
+
         <label for="otel">Contact Phone</label><br>
         <input type="tel" id="otel" name="otel"><br>
+        
         <label for="stay">Choose how long your dog would like to stay:</label><br>
         <select name="days" id="days">
-        <option value="choose">Choose length of stay</option>
-        <option value="1">1 day</option>
-        <option value="2">2 days</option>
-        <option value="3">3 days</option>
-        <option value="4">4 days</option>
-        <option value="5">5 days</option>
-        <option value="6">6 dasy</option>
-        <option value="7">7 days</option>
-    </select>
-    <input type="submit" id="send" name="send"><br>
-</fieldset>
-    </form>
-    </main>
+            <option value="choose">Choose length of stay</option>
+            <option value="1">1 day</option>
+            <option value="2">2 days</option>
+            <option value="3">3 days</option>
+            <option value="4">4 days</option>
+            <option value="5">5 days</option>
+            <option value="6">6 dasy</option>
+            <option value="7">7 days</option>
+        </select>
+        <input type="submit" id="send" name="send"><br>
+    </fieldset>
+</form>
+</main>
 </body>
 </html>
