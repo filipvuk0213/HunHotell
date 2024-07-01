@@ -10,30 +10,30 @@ header {
     background-color: steelblue;
     color: white;
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     position: relative;
 }
 
 .blogo {
     margin: 10px;
-    height: 300px;
+    height: 150px;
 }
 
 h1 {
-background-color: #333;
-position:relative;
-left: 410px;
-width: 520px;
-padding-bottom: 10px;
-margin: 0;
+    background-color: #333;
+    position: relative;
+    width: auto; /* Allow width to adjust based on content */
+    padding: 10px;
+    margin: 0 auto; /* Center horizontally */
+    max-width: 90%; /* Ensure it doesn't overflow */
 }
 
 nav {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the navbar stays on top */
+    background-color: #333;
     width: 100%;
-    text-align: center;
 }
 nav ul {
     display:flex;
@@ -41,12 +41,11 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: #333;
 }
 
 nav ul li {
-    float: left;
+    display: inline-block;
 }
 
 nav ul li a {
@@ -69,15 +68,18 @@ main {
     padding: 20px;
 }
 
-.article {
-    width: 650px;
-    height: 400px;
-    box-sizing: border-box;
+.customer, .activity, .article {
+    margin-bottom: 30px; /* Add margin between sections */
     background-color: lightcyan;
-    color:midnightblue;
+    color: midnightblue;
     padding: 20px;
-    margin: 20px 0;
+    box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.customer img, .activity img, .puppy, .actives {
+    max-width: 100%;
+    height: auto;
 }
 
 h2 {
@@ -88,47 +90,31 @@ a {
     text-decoration: none;
 }
 
-.customer {
-    float:right;
-    border: 15px solid midnightblue;
-    background-color: lightcyan;
-    padding: 10px;
-    margin: 50px;
-}
-.puppy {
-    width: 500px;
-}
-
 .activity {
-    position: relative;
-    float: right;
-    border: 15px solid midnightblue;
-    background-color: lightcyan;
-    padding: 8px;
-    margin-left: 210px;
-    margin-right: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
 }
-.actives {
-    width: 500px;
-}
-
 fieldset {
     border: 10px solid midnightblue;
     background-color: lightcyan;
-    float: left;
-    width: 800px;
-    height: 600px;
-}
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    }
 
 input {
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 .bookinginfo {
-    width: 500px;
+    width: auto;
     height: 400px;
+    margin-top: 40px;
     box-sizing: content-box;
-    float: right;
     background-color: lightcyan;
     color:midnightblue;
     padding: 20px;
@@ -136,7 +122,7 @@ input {
 }
 
 .doglist {
-    width: 1000px;
+    width: auto;
     height: 600px;
     box-sizing: content-box;
     background-color: lightcyan;
@@ -161,6 +147,26 @@ input {
     color: white;
 }
 
+.aboutus {
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    float: right;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 200px;
+}
+
+.owner {
+    margin-top: 50px;
+    width: 250px;
+    height: 300px;
+}
+.aboutus:hover {
+    background-color: midnightblue;
+    color: white;
+}
 .dog1 {
     width: 150px;
     height: 200px;
@@ -188,4 +194,33 @@ input {
 .thirddog {
     margin-left: 80px;
     float: left;
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .customer, .activity, .article {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .blogo {
+        height: 120px; /* Adjust height for smaller screens */
+    }
+
+    .customer, .activity, .article {
+        padding: 10px;
+    }
 }
