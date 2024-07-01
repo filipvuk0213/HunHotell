@@ -10,43 +10,53 @@
     <header>
         <h1>HELSINGBORGS HUNDHOTELL</h1>
         <img class="blogo" src="images/dog_brains_2500.png.webp" alt="blogo">
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="mydogs.html">MY DOGS</a></li>
-                <li><a href="#">CONTACT</a></li>
-                <li><a href="booking.html">BOOKING</a></li>
-            </ul>
-        </nav>
     </header>
-    <main>
-        <section class="doglist">
-            <h2>My Dogs</h2>
-            <a href="booking.html">
-                <button class="addone">ADD DOGS</button>
-            </a>
-            <section class="firstdog">
-            <img class="dog1" src="images/Bruce-Final-small.jpg.webp" alt="MyDog">
-            <h3>BRUCE</h3>
-            <p>CORGI</p>
-            <p>STAYS FOR: 5 DAYS</p>
-            <p>DOG CODE: X5G3Y </p>
-        </section>
-        <section class="seconddog">
-            <img class="dog2" src="images/f4r20chrqz7diy8sshzf.jpeg" alt="MyDog">
-            <h3>MAX</h3>
-            <p>LABRADOR</p>
-            <p>STAYS FOR: 2 DAYS</p>
-            <p>DOG CODE: PL03T </p>
-        </section>
-        <section class="thirddog">
-            <img class="dog3" src="images/xxjqwvpwktvhsojweqep.webp" alt="MyDog">
-            <h3>BELLA</h3>
-            <p>COCER</p>
-            <p>STAYS FOR: 7 DAYS</p>
-            <p>DOG CODE: W4G6J </p>
-        </section>
-        </section>
-    </main>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="mydogs.html">MY DOGS</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="booking.html">BOOKING</a></li>
+        </ul>
+    </nav>
+    <h2>My Dogs</h2>
+    <div id="dogInfoDisplay">
+        <!-- Dog information will be displayed here -->
+    </div>
+
+    <script>
+        // Function to get URL parameter by name
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Retrieve data from URL parameters
+        var dogName = getParameterByName('name');
+        var breed = getParameterByName('breed');
+        var ownerName = getParameterByName('owner');
+        var contactEmail = getParameterByName('email');
+        var contactPhone = getParameterByName('phone');
+        var stayLength = getParameterByName('stay');
+        var code = getParameterByName('code'); // Retrieve random code
+
+        // Display dog information on the page
+        var displayDiv = document.getElementById('dogInfoDisplay');
+        displayDiv.innerHTML = `
+            <p><strong>Dog's Name:</strong> ${dogName}</p>
+            <p><strong>Breed:</strong> ${breed}</p>
+            <p><strong>Owner's Name:</strong> ${ownerName}</p>
+            <p><strong>Contact Email:</strong> ${contactEmail}</p>
+            <p><strong>Contact Phone:</strong> ${contactPhone}</p>
+            <p><strong>Stay Length:</strong> ${stayLength} days</p>
+            <p><strong>Your Dog's Code:</strong> ${code}</p> <!-- Display random code -->
+        `;
+    </script>
+
     </body>
     </html>
